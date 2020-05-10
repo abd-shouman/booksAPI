@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node index.js",
+    "dev": "clear; nodemon --exec babel-node index.js",
     "start": "babel-node index.js"
   },
   "author": "Abdelrahman Shouman",
@@ -21,6 +21,7 @@
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
     "babel-loader": "^8.1.0",
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.3"
   }
 }
