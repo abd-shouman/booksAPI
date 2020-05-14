@@ -1,0 +1,7 @@
+{
+    "events": {
+        "restart": "kill $(sudo lsof -t -i:5555)",
+        "crash": "kill $(sudo lsof -t -i:5555)"
+    },
+    "delay": 100
+}
