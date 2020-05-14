@@ -16,12 +16,14 @@ bookModel.getAll = () => {
     return bookModel.find({});
 }
 
-bookModel.addCar = (book) => {
-    return book.save();
+bookModel.addBook = (book) => {
+    console.log(`adding the book ${book}`)
+    return new bookModel(book).save();
+    
 }
 
-bookModel.removeCar = (bookTitle) => {
+bookModel.removeBook = (bookTitle) => {
     return bookModel.remove({title: bookTitle});
 }
 
-export default booksModel;
+export default bookModel;
