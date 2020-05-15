@@ -30,7 +30,6 @@ class DBConnection{
         mongoose.connection.on('error', err => {
             console.log(`loggin onConnection error`)
             console.log(err)
-            mongoose.close();
         });
     }
 }

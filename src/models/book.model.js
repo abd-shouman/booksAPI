@@ -13,17 +13,23 @@ bookSchema.plugin(uniqueValidator);
 
 let bookModel = mongoose.model('Book',bookSchema);
 bookModel.getAll = () => {
-    return bookModel.find({});
+    return bookModel.find({}).exec();
 }
 
-bookModel.addBook = (book) => {
-    console.log(`adding the book ${book}`)
-    return new bookModel(book).save();
-    
-}
+bookModel.getById = (id) => bookModel.findById(id).exec();
 
-bookModel.removeBook = (bookTitle) => {
-    return bookModel.remove({title: bookTitle});
+bookModel.addBook = (book) => bookModel(book).save();
+
+bookModel.updateBook = (book) => {
+    let _id = book._id;
+    delete book._id;
+    console.log('will update this book');
+    console.log(book)
+    return bookModel.findByIdAndUpdate(_id, book, {new: true}).exec();
+} 
+
+bookModel.removeBook = (_id) => {
+    return bookModel.findByIdAndDelete(_id).exec();
 }
 
 export default bookModel;
