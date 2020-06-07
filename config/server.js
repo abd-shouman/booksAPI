@@ -1,11 +1,12 @@
 import express from 'express';
 import bodyParse from 'body-parser';
 import bookrouter from "../books/index.js"
+import authorrouter from "../authors/index.js"
+
 const server = express();
-
 server.use(bodyParse.json());
-
 server.use("/books", bookrouter); 
+server.use("/authors", authorrouter);
 
 export default server; 
 // const express = require("express"),

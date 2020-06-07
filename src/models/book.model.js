@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 import uniqueValidator from 'mongoose-unique-validator';
 
 const bookSchema = Schema({
-    title: {type: String, required: true, unique: true, index: true},
+    title: {type: String, required: true, index: true},
     author: {type: String, required: true},
     // publishe_date: { type: Date, required: true},
     image_url: {type: String, required: false}

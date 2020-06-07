@@ -1,8 +1,7 @@
-const express = require("express"),
-    app = express();
+import express from 'express';
+const app = express();
 
 import booksModel from "../src/models/book.model";
-import { response } from "express";
 
 app.get("/", (req,res)=>{
     console.log('retreving all books')
@@ -76,8 +75,6 @@ app.delete("/:id", (req, res)=>{
         console.log(err);
         return res.json(err);
     })
+});
 
-})
-
-
-module.exports  = app
+export default app;
